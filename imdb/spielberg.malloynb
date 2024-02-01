@@ -3,6 +3,15 @@
 What did he direct? When? Who does he commonly work with and on what?
 >>>malloy
 import {movies} from "imdb.malloy" 
+>>>malloy
+run: movies -> {
+    limit:20 
+    where: name2 = 'Steven Speilberg'
+        and name !=name2
+    group_by: name
+    aggregate: title_count
+}
+>>>markdown
 >>>markdown
 ## People that work with Steven Spielberg 
 >>>malloy

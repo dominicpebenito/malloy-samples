@@ -5,6 +5,9 @@ source: product_table is duckdb.table('../data/products.parquet') extend {}
 source: inventory_items_table is duckdb.table('../data/inventory_items.parquet') extend {}
 source: order_items_table is duckdb.table('../data/order_items.parquet')
 
+run:users_table -> {
+  select: *
+}
 
 source: users is users_table extend {
   primary_key: id
